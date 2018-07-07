@@ -2,8 +2,8 @@
 
 <div class="container text-center">
   <dl>
-     <dt><h2 class="jumbotron"><kbd><%= @post.title %></h2></dt>
-     <dd><%= @post.body %></dd>
+     <dt><h2 class="jumbotron bg-info"><kbd><%= @post.title %></h2></dt>
+     <dd><blockquote class="blockquote"><%= @post.body %></blockquote></dd>
      <br>
      <dt>User: <%= current_user.email %></dt>
    </dl>

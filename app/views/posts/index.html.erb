@@ -1,4 +1,4 @@
-<div class="jumbotron text-center bg-default">
+<div class="jumbotron text-center bg-info">
   <h1>Welcome! <br><kbd><%=current_user.email%></h1>
 </div>
 
@@ -29,7 +29,7 @@
         <td><%= post.created_at %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
