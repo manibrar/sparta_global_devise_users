@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PostsAuthenticated</title>
+    <title>#Zones</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
@@ -11,8 +11,13 @@
   </head>
 
   <body>
+
     <div class="">
       <%= yield %>
+    </div>
+    <br>
+    <div class="text-center">
+      <%= audio_tag "butterflies.mp3", id: "sound", class: "audio-to-play", controls:true, autoplay: false %>
     </div>
 
   </body>
