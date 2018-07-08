@@ -7,13 +7,13 @@
 <p id="notice" class="alert text-center"><%= notice %></p>
 
 <div class="text-center">
-  <%= link_to 'New Post', new_post_path, class: 'btn btn-outline-dark' %>
+  <%= link_to 'New Post', new_post_path, class: 'btn btn-outline-light' %>
     &nbsp;&nbsp;
-  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark' %>
+  <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-outline-light' %>
   <br>
 </div>
 <br>
-
+<div class="container">
   <% @posts.each do |post| %>
 <div  id="card" class="card text-center d-inline-block" style="width: 18rem;">
 
@@ -28,4 +28,5 @@
       </div>
 </div>
   <% end %>
+  </div>
 <br>
