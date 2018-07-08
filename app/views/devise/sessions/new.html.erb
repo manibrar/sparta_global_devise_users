@@ -1,9 +1,9 @@
 <div class="jumbotron text-center">
-  <h1>Welcome to Lists</h1>
+  <h1>Welcome to Zones</h1>
   <muted><kbd>Quick and simple</small></muted>
 </div>
 
-<div class="container-flex text-center panel">
+<div class="container-flex text-center">
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="field form-group">
       <%= f.label :email %><br />
@@ -24,8 +24,7 @@
 
     <div class="actions">
       <%= f.submit "Log in", class: 'btn btn-outline-dark' %>
+      <%= render "devise/shared/links" %>
     </div>
   <% end %>
-<br>
-  <%= render "devise/shared/links" %>
 </div>

@@ -7,7 +7,8 @@ class PostsController < ApplicationController
   def index
     id = current_user.id.to_i
     @posts = Post.where(user_id:id)
-
+    @allposts = Post.all.order("created_at").reverse
+    @time = Time.now.strftime("%c")
   end
 
   # GET /posts/1

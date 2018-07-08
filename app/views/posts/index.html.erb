@@ -1,33 +1,45 @@
 <div class="jumbotron text-center">
-  <h1>Welcome! <br></h1>
-  <h3><%=current_user.email%></h3>
+  <p><h1>Welcome! <br></h1>
+  <%=current_user.email%> <hr />
+  <span><%=@time%></span></p>
+  <p id="notice" class="alert text-center"><%= notice %></p>
 </div>
 
-
-
-<p id="notice" class="alert text-center"><%= notice %></p>
-
+<div class="">
+  <%= audio_tag "butterflies.mp3", id: "sound", class: "audio-to-play", controls:true, autoplay: false %>
+</div>
+<hr />
 <div class="text-center">
   <%= link_to 'New Post', new_post_path, class: 'btn btn-outline-light' %>
     &nbsp;&nbsp;
   <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-outline-light' %>
+  <hr />
+</div>
   <br>
-</div>
-<br>
-<div class="container">
-  <% @posts.each do |post| %>
-<div  id="card" class="card text-center d-inline-block" style="width: 18rem;">
-
-
-      <div class="card-body">
-        <h5 class="card-title"><%= post.title %></h5>
-        <h6 class="card-subtitle mb-2 text-muted"><%= post.created_at %></h6>
-        <p class="card-text"><%= current_user.email %></p>
-        <%= link_to 'Show', post, class: 'btn btn-outline-dark' %>
-        <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-outline-dark' %>
-        <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-dark' %>
-      </div>
-</div>
-  <% end %>
+  <div class="container text-center">
+    <% @allposts.each do |post| %>
+      <%if post.user.email == current_user.email%>
+        <div  id="card" class="card text-center d-inline-block" style="width: 18rem;">
+          <div class="card-body">
+            <p class="card-title"><%= post.title %></p>
+            <p class="card-subtitle mb-2 text-muted"><%= post.created_at %></p>
+            <p class="card-text"><small><%= post.user.email %></small></p>
+              <%= link_to 'Show', post, class: 'btn btn-outline-dark' %>
+              <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-outline-dark' %>
+              <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-dark' %>
+          </div>
+        </div>
+      <%else%>
+        <div  id="card" class="card text-center d-inline-block" style="width: 18rem;">
+          <div class="card-body">
+            <p class="card-title"><%= post.title %></p>
+            <p class="card-subtitle mb-2 text-muted"><%= post.created_at %></p>
+            <p class="card-text"><small><%= post.user.email %></small></p>
+              <%= link_to 'Show', post, class: 'btn btn-outline-dark' %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
-<br>
+  <br>
+  <hr />

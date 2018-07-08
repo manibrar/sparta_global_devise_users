@@ -9,9 +9,12 @@
   <dl>
      <dd><blockquote class="blockquote"><%= @post.body %></blockquote></dd>
      <br>
-     <dt>User: <%= current_user.email %></dt>
-   </dl>
-
-  <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-outline-light' %>
-  <%= link_to 'Home', posts_path, class: 'btn btn-outline-light' %>
+     <dt>User: <%= @post.user.email %></dt>
+  </dl>
+    <%if @post.user.email == current_user.email%>
+      <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-outline-light' %>
+      <%= link_to 'Home', posts_path, class: 'btn btn-outline-light' %>
+    <%else%>
+      <%= link_to 'Home', posts_path, class: 'btn btn-outline-light' %>
+  <% end %>
 </div>

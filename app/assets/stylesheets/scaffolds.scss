@@ -5,9 +5,11 @@ body {
   font-family: 'Raleway';
   font-size: 13px;
   line-height: 18px;
-  box-sizing: border-box;
   background-image: image-url('background.jpg');
+  background-size: stretch;
+  box-sizing: border-box;
 }
+
 
 p, ol, ul, td {
   font-size: 13px;
@@ -101,10 +103,8 @@ label {
   background-color: black;
 }
 
-.btn {
-  color:white;
-}
 
 .audio-to-play {
   opacity: 0.3;
+  width: 100%;
 }
