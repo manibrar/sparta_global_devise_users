@@ -1,0 +1,17 @@
+<div class="jumbotron text-center">
+  <h2><%= @post.title %></h2>
+  <p id="notice" class="alert"><%= notice %></p>
+</div>
+
+
+
+<div class="container text-center">
+  <dl>
+     <dd><blockquote class="blockquote"><%= @post.body %></blockquote></dd>
+     <br>
+     <dt>User: <%= current_user.email %></dt>
+   </dl>
+
+  <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-outline-light' %>
+  <%= link_to 'Home', posts_path, class: 'btn btn-outline-light' %>
+</div>
